@@ -11,7 +11,7 @@ var imgs = {
 	bottom: './assets/images/bottom.png',
 	brage: './assets/images/brage.png',
 	imgBg: './assets/images/img-bg.jpg',
-	qrcode: './assets/images/qrcode.png',
+	qrcode: './assets/images/qrcode.jpg',
 	border: './assets/images/border1.png',
 	border1: './assets/images/border2.png',
 	collectBtn: './assets/images/collect-btn.png',

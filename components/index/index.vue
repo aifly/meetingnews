@@ -56,13 +56,15 @@
 					</section>
 
 					<div class="zmiti-qrcode">
-						<div>
-							<div>我收藏了2018年两会号外</div>
-							<div>第{{periodsUpper[periods-1]}}期NO.{{randomPv}}号</div>
-						</div>
-						<div>
-							<img :src="imgs.qrcode" />
-						</div>
+						<section> 
+							<div>
+								<div>我收藏了2018年两会号外</div>
+								<div>第{{periodsUpper[periods-1]}}期NO.{{randomPv}}号</div>
+							</div>
+							<div>
+								<img :src="imgs.qrcode" @touchstart='starts' />
+							</div>
+						</section>
 					</div>
 				</div>
 				<div class="wx-comments"    >
@@ -138,7 +140,7 @@
 			        <span></span>
 			        <span></span>
 			        <span></span>
-			        <label>图片正在努力绘制中...</label>
+			        <label>正在生成号外...</label>
 		 	 	</div>
 		 </div>
 
@@ -231,6 +233,9 @@
 		},
 		
 		methods:{
+			starts(){
+				
+			},
 			like(item,index){
 				if(this.commentList[index].isLike){
 					this.toast("您已经点过赞啦~");
@@ -468,7 +473,7 @@
 	.loading{
             width: 5rem;
             left: 2.5rem;
-            height: 40px;
+            height: 30px;
             margin: 0 auto;
             margin-top:40px;
             text-align: center;
@@ -478,7 +483,7 @@
         }
         .loading span{
             display: inline-block;
-            width: 40px;
+            width: 30px;
             height: 100%;
             margin-right: 10px;
             background: #be0000;

@@ -624,26 +624,42 @@ $color: #be0000;
 	@at-root.zmiti-qrcode {
 		width: 10rem;
 		margin: 0 auto;
-		padding: .5rem;
-		box-sizing: border-box;
-		@include displayBox(horizontal);
-		-webkit-box-pack: justify;
 		letter-spacing: 4px;
 		font-size: .45rem;
+		@include pos(r);
+		z-index: 100;
 
-		&>div {
-			&:nth-of-type(1) {
-				&>div {
-					&:nth-of-type(2) {
-						color: $color;
+		&>section {
+			height: 4rem;
+			width: 9rem;
+			margin: 0 auto;
+			box-sizing: border-box;
+			@include displayBox(horizontal);
+			-webkit-box-pack: justify;
+
+			&>div {
+				img {
+					@include pos(r);
+					z-index: 100;
+					padding: 200px 0 0 200px !important;
+					margin: -200px 0 0 -200px !important;
+					-webkit-user-select: none;
+				}
+
+				&:nth-of-type(1) {
+					&>div {
+						&:nth-of-type(2) {
+							color: $color;
+						}
+
 					}
 
 				}
 
-			}
+				&:nth-of-type(2) {
+					width: 3rem;
+				}
 
-			&:nth-of-type(2) {
-				width: 3rem;
 			}
 
 		}

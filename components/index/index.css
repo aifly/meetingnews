@@ -460,19 +460,30 @@ img {
   .zmiti-qrcode {
     width: 10rem;
     margin: 0 auto;
-    padding: .5rem;
-    box-sizing: border-box;
-    display: -webkit-box;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: justify;
     letter-spacing: 4px;
-    font-size: .45rem; }
-    .zmiti-qrcode > div:nth-of-type(1) > div:nth-of-type(2) {
-      color: #be0000; }
-    .zmiti-qrcode > div:nth-of-type(2) {
-      width: 3rem; }
+    font-size: .45rem;
+    position: relative;
+    z-index: 100; }
+    .zmiti-qrcode > section {
+      height: 4rem;
+      width: 9rem;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: -webkit-box;
+      -webkit-box-align: center;
+      -webkit-box-pack: center;
+      -webkit-box-orient: horizontal;
+      -webkit-box-pack: justify; }
+      .zmiti-qrcode > section > div img {
+        position: relative;
+        z-index: 100;
+        padding: 200px 0 0 200px !important;
+        margin: -200px 0 0 -200px !important;
+        -webkit-user-select: none; }
+      .zmiti-qrcode > section > div:nth-of-type(1) > div:nth-of-type(2) {
+        color: #be0000; }
+      .zmiti-qrcode > section > div:nth-of-type(2) {
+        width: 3rem; }
   .zmiti-index-main-content .zmiti-brage {
     width: 250px;
     margin: 0 auto 0; }
