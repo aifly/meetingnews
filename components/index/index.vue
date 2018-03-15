@@ -336,19 +336,34 @@
 			},
 			html2img(){
 				var s = this;
+
 				var {obserable} = this;
 
 				this.scroll.scrollTo(0,0,0);
 				//document.title = '开始截图....'
 				setTimeout(()=>{
-					this.showLoading = true;
+					//this.showLoading = true;
 					var ref = 'zmiti-cache-page';
 					var dom = this.$refs[ref];
 					html2canvas(dom,{
 						useCORS: true,
 						onrendered: function(canvas) {
-					        var url = canvas.toDataURL();
-					        $.ajax({
+					        var src = canvas.toDataURL();
+					        s.createImg = src;
+		             		s.showBtns = true;
+		             		s.showLoading = false;
+
+		             		setTimeout(()=>{
+		             			//document.title=s.viewH+','+(s.$refs['createimgs'].offsetHeight*1.2)
+								s.$refs['createimgs'].style.WebkitTransform = 'scale('+s.viewH/(s.$refs['createimgs'].offsetHeight*1.2)+')'
+
+								s.$refs['audio'].play();
+							},100);
+
+							zmitiUtil.wxConfig(window.zmitiConfig.shareTitle.replace(/{{totalPv}}/ig, s.totalpv),
+							window.zmitiConfig.shareDesc.replace(/{{periods}}/ig, s.periodsUpper[window.zmitiConfig.periods - 1]).replace(/{{pv}}/ig, s.randomPv));
+					        return;
+					        /*$.ajax({
 					          //url: window.protocol+'//api.zmiti.com/v2/share/base64_image/',
 					          url:window.protocol+'//'+window.server+'.zmiti.com/v2/share/base64_image/',
 					          type: 'post',
@@ -389,13 +404,12 @@
 
 									url = zmitiUtil.changeURLPar(url,'src',src);
 
-									zmitiUtil.wxConfig(window.zmitiConfig.shareTitle.replace(/{{totalPv}}/ig, s.totalpv),
-							window.zmitiConfig.shareDesc.replace(/{{periods}}/ig, s.periodsUpper[window.zmitiConfig.periods - 1]).replace(/{{pv}}/ig, s.randomPv),url);
+									
 								       
 					            }
 
 					          }
-					        })
+					        })*/
 
 					      },
 					      width: dom.clientWidth,
