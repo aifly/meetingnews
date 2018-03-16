@@ -21,8 +21,9 @@
 						<div>
 							<img :src="imgs.wx" v-if='!showCollect' >
 							<p style="height: 1px;" v-if='showCollect'></p>
-							<div  :style="{width:'96%',background: 'url('+imgs.bg+') no-repeat center top',paddingTop:!showCollect?'2%':'2%',backgroundSize:'cover'}">
-								<span></span>
+							<div  :style="{width:'96%'}">
+								<img :src="imgs.main"/>
+								<!-- <span></span>
 								<div style="padding-top:4vh;"></div>
 								<div class="zmiti-brage">
 									<img :src="imgs.brage" alt="">
@@ -49,7 +50,7 @@
 											<img :src="imgs.logo" alt="">
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						
