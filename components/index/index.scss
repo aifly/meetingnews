@@ -574,7 +574,7 @@ $color: #be0000;
 			width: 2.5rem;
 			@include pos(a);
 			z-index: 10;
-			bottom: 13vh;
+			bottom: 5vh;
 			right: .8rem;
 			border: 1px solid transparent;
 			@include transition(.1s);
@@ -641,8 +641,6 @@ $color: #be0000;
 				img {
 					@include pos(r);
 					z-index: 100;
-					padding: 200px 0 0 200px !important;
-					margin: -200px 0 0 -200px !important;
 					-webkit-user-select: none;
 				}
 

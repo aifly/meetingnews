@@ -16,7 +16,7 @@ var imgs = {
 	border1: './assets/images/border2.png',
 	collectBtn: './assets/images/collect-btn.png',
 	edit: './assets/images/edit.jpg',
-	main: './assets/images/1.jpg',
+	main: './assets/images/6.jpg',
 	wx: './assets/images/wx2.jpg',
 
 }

@@ -16,7 +16,7 @@
 		  </transition>
 		<div v-show='!createImg'  class="lt-full" ref='page'>
 			<div>
-				<div class="zmiti-index-main-content"  ref='zmiti-cache-page'>
+				<div class="zmiti-index-main-content" :style='{height:1700+"px"}'  ref='zmiti-cache-page'>
 					<section >
 						<div>
 							<img :src="imgs.wx" v-if='!showCollect' >
@@ -60,7 +60,7 @@
 						<section> 
 							<div>
 								<div>我收藏了2018年两会号外</div>
-								<div>第{{periodsUpper[periods-1]}}期NO.{{randomPv}}号</div>
+								<div>NO.{{randomPv}}号</div>
 							</div>
 							<div>
 								<img :src="imgs.qrcode" @touchstart='starts' />
@@ -357,6 +357,7 @@
 		             		setTimeout(()=>{
 		             			//document.title=s.viewH+','+(s.$refs['createimgs'].offsetHeight*1.2)
 								s.$refs['createimgs'].style.WebkitTransform = 'scale('+s.viewH/(s.$refs['createimgs'].offsetHeight*1.2)+')'
+
 
 								s.$refs['audio'].play();
 							},100);
